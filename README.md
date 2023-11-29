@@ -33,12 +33,11 @@ To get your google credentials we recommend reading and following the [OAuth 2.0
 
 The tap calls the following Google APIs, these need to be enabled in Google Cloud Console
 - [spreadsheets.values.get](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get?hl=en_GB)
-- [drive.files.get](https://developers.google.com/drive/api/reference/rest/v3/files/get)
 
 Consent for these scopes needs to be supplied in **required scopes** during OAuth client creation and requested in your authorization flow.
 
 ```
-https://www.googleapis.com/auth/spreadsheets.readonly https://www.googleapis.com/auth/drive.readonly
+https://www.googleapis.com/auth/spreadsheets.readonly
 ```
 
 

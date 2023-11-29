@@ -86,14 +86,14 @@ class TapGoogleSheets(Tap):
             tap=self,
             name="config",
             schema={"one": "one"},
-            path="https://www.googleapis.com/drive/v2/files/" + self.config["sheet_id"],
+            path="https://sheets.googleapis.com/v4/spreadsheets/" + self.config["sheet_id"],
         )
 
         prepared_request = config_stream.prepare_request(None, None)
 
         response: requests.Response = config_stream._request(prepared_request, None)
 
-        return response.json().get("title")
+        return response.json().get("properties").get("title")
 
     def get_schema(self, google_sheet_data: requests.Response):
         """Build the schema from the data returned by the google sheet."""

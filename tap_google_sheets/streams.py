@@ -18,7 +18,7 @@ class GoogleSheetsStream(GoogleSheetsBaseStream):
     child_sheet_name = None
     primary_key = None
     url_base = "https://sheets.googleapis.com/v4/spreadsheets"
-
+        
     @property
     def path(self):
         """Set the path for the stream."""

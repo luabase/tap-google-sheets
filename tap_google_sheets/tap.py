@@ -97,7 +97,11 @@ class TapGoogleSheets(Tap):
 
     def get_schema(self, google_sheet_data: requests.Response):
         """Build the schema from the data returned by the google sheet."""
-        headings, *data = google_sheet_data.json()["values"]
+        json_data = google_sheet_data.json()
+        if "values" not in json_data:
+            headings = []
+        else:
+            headings, *data = google_sheet_data.json()["values"]
 
         schema = th.PropertiesList()
         for column in headings:

@@ -10,9 +10,9 @@ keywords = [
 license = "GNU Affero General Public License v3.0"
 
 [tool.poetry.dependencies]
-python = "<3.13,>=3.7.1"
+python = "<3.13,>=3.9"
 requests = "^2.25.1"
-singer-sdk = "^0.26.0"
+singer-sdk = "^0.46.0"
 click = "8.0.1"
 
 [tool.poetry.dev-dependencies]
